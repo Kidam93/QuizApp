@@ -30,9 +30,6 @@ function showQuestion(question) {
     const button = document.createElement('button')
     button.innerText = answer.text
     button.classList.add('btn')
-    if (answer.correct) {
-      button.dataset.correct = answer.correct
-    }
     button.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(button)
   })
@@ -46,9 +43,6 @@ function resetState() {
 }
 
 function selectAnswer(e) {
-  console.log(e.target)
-//   e.target.classList.toggle('is-selected')
-  console.log(questions)  
   if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {

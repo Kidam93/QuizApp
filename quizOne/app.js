@@ -3,7 +3,6 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -43,6 +42,9 @@ function resetState() {
 }
 
 function selectAnswer(e) {
+  const text = e.target.innerText
+  
+  console.log(text)
   if (questions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
@@ -52,7 +54,7 @@ function selectAnswer(e) {
 }
 
 
-// FROM DATABASE
+// FROM DATABASE SERIALIZE JSON
 
 const questions = [
   {
